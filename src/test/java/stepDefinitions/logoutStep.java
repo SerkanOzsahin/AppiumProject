@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.appium.java_client.android.AndroidElement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,17 +11,21 @@ import org.testng.Assert;
 import utilities.Hooks;
 import utilities.ReusableMethods;
 
+import java.util.List;
+
 public class logoutStep extends Hooks {
 
     ReusableMethods rs = new ReusableMethods();
 
     @Given("The user is logged in")
     public void theUserIsLoggedIn() {
-        setUp();
-        androidDriver.findElement(By.xpath("//android.widget.Button[@text=\"Test\"]")).click();
-        rs.waitFor(2);
-        androidDriver.findElement(By.xpath("//android.widget.Button[@text='CONTINUE']")).click();
-        rs.waitFor(2);
+        List<AndroidElement> testButton = androidDriver.findElements(By.xpath("//android.widget.Button[@text=\"Test\"]"));
+        if (testButton.size() > 0) {
+            testButton.get(0).click();
+            rs.waitFor(2);
+            androidDriver.findElement(By.xpath("//android.widget.Button[@text='CONTINUE']")).click();
+            rs.waitFor(2);
+        }
         androidDriver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"ion-input-0\"]")).sendKeys("turkeyts");
         rs.waitFor(2);
         androidDriver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"ion-input-1\"]")).sendKeys("TechnoStudy123");
@@ -47,6 +52,5 @@ public class logoutStep extends Hooks {
     public void theUserIsRedirectedToTheLoginPage() {
         WebElement signButton = androidDriver.findElement(By.xpath("//android.widget.Button[@text=\"SIGN IN\"]"));
         Assert.assertTrue(signButton.isDisplayed());
-        tearDown();
     }
 }
