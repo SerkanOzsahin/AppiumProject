@@ -33,7 +33,7 @@ public class Hooks {
     @AfterClass
     public void tearDown() {
         if (androidDriver != null) {
-            androidDriver.closeApp();
+            androidDriver.quit();
             androidDriver = null;
         }
     }
