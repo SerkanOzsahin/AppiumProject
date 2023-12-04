@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import utilities.ConfigReader;
 import utilities.Hooks;
 import utilities.ReusableMethods;
 
@@ -19,16 +20,17 @@ public class logoutStep extends Hooks {
 
     @Given("The user is logged in")
     public void theUserIsLoggedIn() {
-        List<AndroidElement> testButton = androidDriver.findElements(By.xpath("//android.widget.Button[@text=\"Test\"]"));
+        setUp();
+        List<AndroidElement> testButton = androidDriver.findElements(By.xpath("//android.widget.Button[@text=\"Techno Study\"]"));
         if (testButton.size() > 0) {
             testButton.get(0).click();
             rs.waitFor(2);
             androidDriver.findElement(By.xpath("//android.widget.Button[@text='CONTINUE']")).click();
             rs.waitFor(2);
         }
-        androidDriver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"ion-input-0\"]")).sendKeys("turkeyts");
+        androidDriver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"ion-input-0\"]")).sendKeys(ConfigReader.getProperty("username"));
         rs.waitFor(2);
-        androidDriver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"ion-input-1\"]")).sendKeys("TechnoStudy123");
+        androidDriver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"ion-input-1\"]")).sendKeys(ConfigReader.getProperty("password"));
         rs.waitFor(2);
         androidDriver.findElement(By.xpath("//android.widget.Button[@text='SIGN IN']")).click();
         rs.waitFor(2);
@@ -52,5 +54,6 @@ public class logoutStep extends Hooks {
     public void theUserIsRedirectedToTheLoginPage() {
         WebElement signButton = androidDriver.findElement(By.xpath("//android.widget.Button[@text=\"SIGN IN\"]"));
         Assert.assertTrue(signButton.isDisplayed());
+        tearDown();
     }
 }
