@@ -3,8 +3,6 @@ package utilities;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,7 +13,6 @@ public class Hooks {
 
     static DesiredCapabilities capabilities = new DesiredCapabilities();
 
-    @BeforeMethod
     public void setUp() {
         try {
             capabilities.setCapability("deviceName", ConfigReader.getProperty("deviceName"));
@@ -30,7 +27,6 @@ public class Hooks {
         }
     }
 
-    @AfterMethod
     public void tearDown() {
         if (androidDriver != null) {
             androidDriver.closeApp();
