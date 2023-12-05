@@ -16,38 +16,38 @@ import java.util.List;
 
 public class logoutStep extends Hooks {
 
-    ReusableMethods rs = new ReusableMethods();
+    ReusableMethods rm = new ReusableMethods();
 
     @Given("The user is logged in")
     public void theUserIsLoggedIn() {
         setUp();
-        List<AndroidElement> testButton = androidDriver.findElements(By.xpath("//android.widget.Button[@text=\"Techno Study\"]"));
-        if (testButton.size() > 0) {
-            testButton.get(0).click();
-            rs.waitFor(2);
+        List<AndroidElement> tsButton = androidDriver.findElements(By.xpath("//android.widget.Button[@text=\"Techno Study\"]"));
+        if (tsButton.size() > 0) {
+            tsButton.get(0).click();
+            rm.waitFor(2);
             androidDriver.findElement(By.xpath("//android.widget.Button[@text='CONTINUE']")).click();
-            rs.waitFor(2);
+            rm.waitFor(2);
         }
         androidDriver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"ion-input-0\"]")).sendKeys(ConfigReader.getProperty("username"));
-        rs.waitFor(2);
+        rm.waitFor(2);
         androidDriver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"ion-input-1\"]")).sendKeys(ConfigReader.getProperty("password"));
-        rs.waitFor(2);
+        rm.waitFor(2);
         androidDriver.findElement(By.xpath("//android.widget.Button[@text='SIGN IN']")).click();
-        rs.waitFor(2);
+        rm.waitFor(2);
     }
 
     @When("The user navigates to the Settings page in the Hamburger Menu")
     public void theUserNavigatesToTheSettingsPageInTheHamburgerMenu() {
         androidDriver.findElement(By.xpath("//android.widget.Button[@text=\"menu\"]")).click();
-        rs.waitFor(2);
+        rm.waitFor(2);
         androidDriver.findElement(By.xpath("//android.widget.TextView[@text=\"Settings\"]")).click();
-        rs.waitFor(2);
+        rm.waitFor(2);
     }
 
     @And("The user clicks on the Sign Out button")
     public void theUserClicksOnTheSignOutButton() {
         androidDriver.findElement(By.xpath("//android.widget.Button[@text=\"Sign out\"]")).click();
-        rs.waitFor(2);
+        rm.waitFor(2);
     }
 
     @Then("The user is redirected to the login page")
