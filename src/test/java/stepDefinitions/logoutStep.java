@@ -8,7 +8,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.logoutPage;
 import utilities.ConfigReader;
@@ -20,7 +19,6 @@ import java.util.List;
 public class logoutStep extends Hooks {
 
     logoutPage dc = new logoutPage();
-    WebDriverWait wait = new WebDriverWait(androidDriver, 10);
     ReusableMethods rm = new ReusableMethods();
 
     @Given("The user is logged in")
