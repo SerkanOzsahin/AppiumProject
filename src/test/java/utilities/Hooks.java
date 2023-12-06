@@ -23,7 +23,7 @@ public class Hooks {
             capabilities.setCapability("app", System.getProperty("user.dir") + ConfigReader.getProperty("app"));
             capabilities.setCapability("noReset", true);
             androidDriver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723"), capabilities);
-            wait = new WebDriverWait(androidDriver, 20);
+            wait = new WebDriverWait(androidDriver, 10);
         } catch (MalformedURLException e) {
             System.out.println("Malformed Url Exception:" + e.getMessage());
         }
