@@ -31,7 +31,9 @@ public class logoutStep extends Hooks {
             androidDriver.findElement(dc.continueButton).click();
         }
         wait.until(ExpectedConditions.visibilityOfElementLocated(dc.username));
+        androidDriver.findElement(dc.username).clear();
         androidDriver.findElement(dc.username).sendKeys(ConfigReader.getProperty("username"));
+        androidDriver.findElement(dc.password).clear();
         androidDriver.findElement(dc.password).sendKeys(ConfigReader.getProperty("password"));
         androidDriver.findElement(dc.signButton).click();
     }
