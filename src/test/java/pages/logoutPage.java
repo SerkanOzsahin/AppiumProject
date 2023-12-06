@@ -10,6 +10,7 @@ public class logoutPage extends Hooks {
         PageFactory.initElements(androidDriver, this);
     }
 
+    public By continueButton = By.xpath("//android.widget.Button[@text='CONTINUE']");
     public By username = By.xpath("//android.widget.EditText[@resource-id=\"ion-input-0\"]");
     public By password = By.xpath("//android.widget.EditText[@resource-id=\"ion-input-1\"]");
     public By signButton = By.xpath("//android.widget.Button[@text='SIGN IN']");
