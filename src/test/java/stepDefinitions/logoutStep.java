@@ -29,9 +29,8 @@ public class logoutStep extends Hooks {
         List<AndroidElement> tsButton = androidDriver.findElements(By.xpath("//android.widget.Button[@text=\"Techno Study\"]"));
         if (tsButton.size() > 0) {
             tsButton.get(0).click();
-            rm.waitFor(1);
-            androidDriver.findElement(By.xpath("//android.widget.Button[@text='CONTINUE']")).click();
-            wait.until(ExpectedConditions.visibilityOfElementLocated(dc.username));
+            rm.waitFor(2);
+            androidDriver.findElement(dc.continueButton).click();
         }
         wait.until(ExpectedConditions.visibilityOfElementLocated(dc.username));
         androidDriver.findElement(dc.username).sendKeys(ConfigReader.getProperty("username"));
