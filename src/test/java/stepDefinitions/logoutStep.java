@@ -14,38 +14,16 @@ import utilities.ConfigReader;
 import utilities.Hooks;
 import utilities.ReusableMethods;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class logoutStep extends Hooks {
 
     logoutPage lo = new logoutPage();
     ReusableMethods rm = new ReusableMethods();
-    Robot robot;
-
-    {
-        try {
-            robot = new Robot();
-        } catch (AWTException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     @Given("The user is logged in")
     public void theUserIsLoggedIn() {
         setUp();
-        List<AndroidElement> allowNotification = androidDriver.findElements(By.id("com.android.permissioncontroller:id/permission_allow_button"));
-        if (allowNotification.size() > 0) {
-            for (int i = 0; i < 2; i++) {
-                robot.keyPress(KeyEvent.VK_TAB);
-                robot.keyRelease(KeyEvent.VK_TAB);
-                rm.waitFor(1);
-            }
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-            rm.waitFor(1);
-        }
         List<AndroidElement> tsButton = androidDriver.findElements(By.xpath("//android.widget.Button[@text=\"Techno Study\"]"));
         if (tsButton.size() > 0) {
             tsButton.get(0).click();

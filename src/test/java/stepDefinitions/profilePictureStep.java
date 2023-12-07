@@ -22,6 +22,7 @@ public class profilePictureStep extends Hooks {
 
     logoutPage lo = new logoutPage();
     profilePicturePage pp = new profilePicturePage();
+    ReusableMethods rm = new ReusableMethods();
     Robot robot;
 
     {
@@ -32,17 +33,9 @@ public class profilePictureStep extends Hooks {
         }
     }
 
-    ReusableMethods rm = new ReusableMethods();
-
     @Given("the user is logged into their account")
     public void theUserIsLoggedIntoTheirAccount() {
         setUp();
-        List<AndroidElement> allowNotification = androidDriver.findElements(By.id("com.android.permissioncontroller:id/permission_allow_button"));
-        if (allowNotification.size() > 0) {
-            rm.waitFor(1);
-            allowNotification.get(0).click();
-            rm.waitFor(1);
-        }
         List<AndroidElement> tsButton = androidDriver.findElements(By.xpath("//android.widget.Button[@text=\"Techno Study\"]"));
         if (tsButton.size() > 0) {
             tsButton.get(0).click();
@@ -69,6 +62,7 @@ public class profilePictureStep extends Hooks {
         androidDriver.findElement(pp.changeButton).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(pp.cameraButton));
         androidDriver.findElement(pp.cameraButton).click();
+        rm.waitFor(1);
         List<AndroidElement> allowCamera = androidDriver.findElements(By.xpath("//android.widget.Button[@resource-id=\"com.android.permissioncontroller:id/permission_allow_one_time_button\"]"));
         if (allowCamera.size() > 0) {
             for (int i = 0; i < 2; i++) {
