@@ -13,7 +13,7 @@ import utilities.ReusableMethods;
 import java.util.List;
 
 
-public class _03_Accessing_Hamburger_Button extends Hooks {
+public class hamburgerButton extends Hooks {
     ReusableMethods rs = new ReusableMethods();
     DragPageSS dc = new DragPageSS();
 

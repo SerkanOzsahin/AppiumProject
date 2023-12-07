@@ -11,7 +11,7 @@ import utilities.Hooks;
 
 
 
-public class _07_Accessing_Account_Settings extends Hooks {
+public class accountSettings extends Hooks {
     DragPageSS dc = new DragPageSS();
 
     @When("The user should be able to see settings button and that button must be clickable")
