@@ -1,21 +1,13 @@
 package stepDefinitions;
 
-import io.appium.java_client.android.AndroidElement;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 import pages.choosingPlatformPage;
 import utilities.Hooks;
-import utilities.ReusableMethods;
-
-import java.util.List;
 
 public class choosingPlatformStep extends Hooks {
-
 
     choosingPlatformPage dc = new choosingPlatformPage();
 
@@ -50,13 +42,10 @@ public class choosingPlatformStep extends Hooks {
         androidDriver.findElement(dc.continueButton).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(dc.switchButton));
         androidDriver.findElement(dc.switchButton).click();
-
-
     }
 
     @Then("The user should be directed to the platform")
     public void theUserShouldBeDirectedToThePlatform() {
-
         tearDown();
     }
 }

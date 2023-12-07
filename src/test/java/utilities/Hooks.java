@@ -32,6 +32,7 @@ public class Hooks {
     public void tearDown() {
         if (androidDriver != null) {
             androidDriver.quit();
+            androidDriver.closeApp();
             androidDriver = null;
         }
     }
