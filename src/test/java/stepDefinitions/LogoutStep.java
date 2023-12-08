@@ -9,16 +9,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import pages.logoutPage;
+import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Hooks;
 import utilities.ReusableMethods;
 
 import java.util.List;
 
-public class logoutStep extends Hooks {
+public class LogoutStep extends Hooks {
 
-    logoutPage lo = new logoutPage();
+    LoginPage lo = new LoginPage();
     ReusableMethods rm = new ReusableMethods();
 
     @Given("The user is logged in")

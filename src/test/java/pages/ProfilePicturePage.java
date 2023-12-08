@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Hooks;
 
-public class profilePicturePage extends Hooks {
+public class ProfilePicturePage extends Hooks {
 
-    public profilePicturePage() {
+    public ProfilePicturePage() {
         PageFactory.initElements(androidDriver, this);
     }
 

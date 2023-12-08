@@ -8,8 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import pages.logoutPage;
-import pages.profilePicturePage;
+import pages.LoginPage;
+import pages.ProfilePicturePage;
 import utilities.ConfigReader;
 import utilities.Hooks;
 import utilities.ReusableMethods;
@@ -18,10 +18,10 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
-public class profilePictureStep extends Hooks {
+public class ProfilePictureStep extends Hooks {
 
-    logoutPage lo = new logoutPage();
-    profilePicturePage pp = new profilePicturePage();
+    LoginPage lo = new LoginPage();
+    ProfilePicturePage pp = new ProfilePicturePage();
     ReusableMethods rm = new ReusableMethods();
     Robot robot;
 

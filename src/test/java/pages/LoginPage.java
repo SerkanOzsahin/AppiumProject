@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Hooks;
 
-public class logoutPage extends Hooks {
+public class LoginPage extends Hooks {
 
-    public logoutPage() {
+    public LoginPage() {
         PageFactory.initElements(androidDriver, this);
     }
 
