@@ -5,7 +5,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import pages.homeworkPage;
 import utilities.ConfigReader;
 import utilities.Hooks;
@@ -48,9 +50,7 @@ public class homeworkStep extends Hooks {
 
     @Then("The user should be able to see homework details")
     public void theUserShouldBeAbleToSeeHomeworkDetails() {
-       //WebElement homework =androidDriver.findElement(By.xpath("//android.widget.Button[@text=\"Testing B4 HTML Ödevi - 00:00 Gönderme Durumu : Gönderildi\"]"));
-       //androidDriver.findElement(By.xpath("//android.widget.Button[@text=\"Testing B4 HTML Ödevi - 00:00 Gönderme Durumu : Gönderildi\"]")).click();
-       //Assert.assertTrue(homework.isDisplayed());
-       //rm.waitFor(2);
+        WebElement descriptionText= androidDriver.findElement(By.xpath("//android.widget.TextView[@text=\"Description\"]"));
+        Assert.assertTrue(descriptionText.getText().toLowerCase().equals("description"));
     }
 }
