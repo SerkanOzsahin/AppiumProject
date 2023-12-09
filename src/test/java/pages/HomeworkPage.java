@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Hooks;
 
-public class homeworkPage extends Hooks {
-    public homeworkPage() {
+public class HomeworkPage extends Hooks {
+    public HomeworkPage() {
         PageFactory.initElements(androidDriver,this);
     }
 

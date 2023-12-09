@@ -7,9 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Hooks;
 
-public class DragPageSS extends Hooks {
+public class HamburgerPage extends Hooks {
 
-    public DragPageSS() {
+    public HamburgerPage() {
         PageFactory.initElements(androidDriver, this);
     }
 

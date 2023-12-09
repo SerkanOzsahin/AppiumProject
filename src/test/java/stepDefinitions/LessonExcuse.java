@@ -6,16 +6,16 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import pages.lessonExcusePage;
+import pages.LessonExcusePage;
 import utilities.ConfigReader;
 import utilities.Hooks;
 import utilities.ReusableMethods;
 
 import java.util.List;
 
-public class lessonExcuseStep extends Hooks {
+public class LessonExcuse extends Hooks {
 
-    lessonExcusePage dc = new lessonExcusePage();
+    LessonExcusePage dc = new LessonExcusePage();
     ReusableMethods rm = new ReusableMethods();
 
     @Given("The user has a scheduled class")
@@ -33,7 +33,6 @@ public class lessonExcuseStep extends Hooks {
         androidDriver.findElement(dc.password).clear();
         androidDriver.findElement(dc.password).sendKeys(ConfigReader.getProperty("password"));
         androidDriver.findElement(dc.signButton).click();
-
     }
 
     @When("The user unable to attend the class")
@@ -43,7 +42,6 @@ public class lessonExcuseStep extends Hooks {
         androidDriver.findElement(dc.plusButton).click();
         androidDriver.findElement(dc.message).sendKeys("a");
         androidDriver.findElement(dc.sendButton).click();
-
     }
 
     @Then("The user should be able to notify teachers and authorities")

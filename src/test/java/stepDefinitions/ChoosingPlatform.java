@@ -4,12 +4,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import pages.choosingPlatformPage;
+import pages.ChoosingPlatformPage;
 import utilities.Hooks;
 
-public class choosingPlatformStep extends Hooks {
+public class ChoosingPlatform extends Hooks {
 
-    choosingPlatformPage dc = new choosingPlatformPage();
+    ChoosingPlatformPage dc = new ChoosingPlatformPage();
 
     @Given("The user launches the app")
     public void theUserLaunchesTheApp() {

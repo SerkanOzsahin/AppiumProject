@@ -5,6 +5,3 @@ Feature: Excuse Reporting
     Given The user has a scheduled class
     When The user unable to attend the class
     Then The user should be able to notify teachers and authorities
-
-
-

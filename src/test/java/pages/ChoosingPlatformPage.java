@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Hooks;
 
-public class choosingPlatformPage extends Hooks {
+public class ChoosingPlatformPage extends Hooks {
 
-    public choosingPlatformPage() {
+    public ChoosingPlatformPage() {
         PageFactory.initElements(androidDriver, this);
     }
 

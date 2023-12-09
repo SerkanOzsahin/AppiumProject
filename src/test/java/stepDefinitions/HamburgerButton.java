@@ -6,17 +6,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import pages.DragPageSS;
+import pages.HamburgerPage;
 import utilities.ConfigReader;
 import utilities.Hooks;
 import utilities.ReusableMethods;
 
 import java.util.List;
 
-public class hamburgerButton extends Hooks {
+public class HamburgerButton extends Hooks {
 
     ReusableMethods rs = new ReusableMethods();
-    DragPageSS dc = new DragPageSS();
+    HamburgerPage dc = new HamburgerPage();
 
     @Given("Navigate to campus app and click on the demo button")
     public void navigateToCampusAppAndClickOnTheDemoButton() {

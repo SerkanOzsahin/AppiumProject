@@ -8,17 +8,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import pages.homeworkPage;
+import pages.HomeworkPage;
 import utilities.ConfigReader;
 import utilities.Hooks;
 import utilities.ReusableMethods;
 
 import java.util.List;
 
-public class homeworkStep extends Hooks {
+public class Homework extends Hooks {
 
-    homeworkPage hp=new homeworkPage();
-    ReusableMethods rm= new ReusableMethods();
+    HomeworkPage hp = new HomeworkPage();
+    ReusableMethods rm = new ReusableMethods();
+
     @Given("The user is at homework page")
     public void theUserIsAtHomeworkPage() {
         setUp();
@@ -30,10 +31,8 @@ public class homeworkStep extends Hooks {
         }
         wait.until(ExpectedConditions.visibilityOfElementLocated(hp.username));
         androidDriver.findElement(hp.username).clear();
-
         androidDriver.findElement(hp.username).sendKeys(ConfigReader.getProperty("username"));
         androidDriver.findElement(hp.password).clear();
-
         androidDriver.findElement(hp.password).sendKeys(ConfigReader.getProperty("password"));
         androidDriver.findElement(hp.signButton).click();
     }
@@ -42,16 +41,14 @@ public class homeworkStep extends Hooks {
     public void theUserClicksOnAHomework() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(hp.hamburgerButton));
         androidDriver.findElement(hp.hamburgerButton).click();
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(hp.homeworksButton));
         androidDriver.findElement(hp.homeworksButton).click();
     }
 
-
     @Then("The user should be able to see homework details")
     public void theUserShouldBeAbleToSeeHomeworkDetails() {
         rm.waitFor(2);
-        WebElement assignmentsText= androidDriver.findElement(By.xpath("//android.view.View[@resource-id=\"main-content\"]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView"));
+        WebElement assignmentsText = androidDriver.findElement(By.xpath("//android.view.View[@resource-id=\"main-content\"]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView"));
         Assert.assertEquals(assignmentsText.getText().toLowerCase(), "assignments");
     }
 }

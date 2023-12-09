@@ -5,12 +5,12 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import pages.DragPageSS;
+import pages.HamburgerPage;
 import utilities.Hooks;
 
-public class accountSettings extends Hooks {
+public class AccountSettings extends Hooks {
 
-    DragPageSS dc = new DragPageSS();
+    HamburgerPage dc = new HamburgerPage();
 
     @When("The user should be able to see settings button and that button must be clickable")
     public void theUserShouldBeAbleToSeeSettingsButtonAndThatButtonMustBeClickable() {
