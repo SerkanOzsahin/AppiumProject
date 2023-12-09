@@ -50,7 +50,8 @@ public class homeworkStep extends Hooks {
 
     @Then("The user should be able to see homework details")
     public void theUserShouldBeAbleToSeeHomeworkDetails() {
-        WebElement descriptionText= androidDriver.findElement(By.xpath("//android.widget.TextView[@text=\"Description\"]"));
-        Assert.assertTrue(descriptionText.getText().toLowerCase().equals("description"));
+        rm.waitFor(2);
+        WebElement assignmentsText= androidDriver.findElement(By.xpath("//android.view.View[@resource-id=\"main-content\"]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView"));
+        Assert.assertEquals(assignmentsText.getText().toLowerCase(), "assignments");
     }
 }

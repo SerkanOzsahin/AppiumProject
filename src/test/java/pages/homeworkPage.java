@@ -16,7 +16,7 @@ public class homeworkPage extends Hooks {
     public By hamburgerButton = By.xpath("//android.widget.Button[@text=\"menu\"]");
 
     /***********************************************************/
-    public By homeworksButton=By.xpath("//android.widget.TextView[@text=\"22\"]");
+    public By homeworksButton=(By.xpath("//android.widget.TextView[@text=\"Assignments\"]"));
 
     public By description=By.xpath("//android.widget.TextView[@text=\"Description\"]");
 }
